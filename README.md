@@ -1,7 +1,7 @@
 # ld_detector
 detect LD_PRELOAD hijacking, library injection attacks, and dynamic linker manipulation
 
-it implements multiple detection mechanisms including environment variable enumeration for ld_preload, ld_library_path, ld_audit, and ld_debug manipulations, process memory mapping analysis through /1proc/self/maps` parsing for suspicious shared object locations and dynamic linker introspection using `dl_iterate_phdr()` to enumerate loaded objects via program header inspection
+it implements multiple detection mechanisms including environment variable enumeration for ld_preload, ld_library_path, ld_audit, and ld_debug manipulations, process memory mapping analysis through `/proc/self/maps` parsing for suspicious shared object locations and dynamic linker introspection using `dl_iterate_phdr()` to enumerate loaded objects via program header inspection
 
 it also performs symbol resolution hooking detection using `dlsym()` and `dladdr()` to identify function pointer redirection, filesystem metadata validation through `stat()` analysis for setuid/setgid bits and world writable permissions, mount namespace inspection of `/proc/mounts` for overlay filesystems and command line forensics via `/proc/self/cmdline` analysis
 
